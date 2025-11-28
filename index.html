@@ -1,36 +1,142 @@
+// ...existing code...
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="estilos.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portafolio - Eric Casanovas</title>
+    <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-
-    <header>
-        <h1>Mi Portafolio</h1>
-        <nav>
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#home">Eric Casanovas</a>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+                <span class="burger"></span>
+            </button>
+            <nav id="main-nav" class="nav">
+                <a href="#home">Home</a>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+                <a class="btn-ghost" href="https://github.com/tu-usuario" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Hola, soy un estudiante de SMR creando mi primer portafolio web.</p>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Desarrollo web y proyectos desde SMR</h1>
+                    <p>Hola, soy Eric — estudiante de SMR. Aquí muestro mis trabajos, proyectos y prácticas.</p>
+                    <div class="hero-ctas">
+                        <a class="btn" href="#proyectos">Ver proyectos</a>
+                        <a class="btn-outline" href="#contacto">Contactar</a>
+                    </div>
+                </div>
+                <div class="hero-image" aria-hidden="true">
+                    <!-- Imagen o ilustración decorativa -->
+                </div>
+            </div>
+        </section>
 
-    <section id="proyectos">
-        <h2>Proyectos</h2>
-        <p>Aquí mostraré proyectos cuando los tenga listos.</p>
-    </section>
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2>Sobre mí</h2>
+                <div class="about-grid">
+                    <div>
+                        <p>Soy estudiante de grado medio en Sistemas Microinformáticos y Redes (SMR). Me interesa el desarrollo web, la automatización y los proyectos prácticos realizados en clase.</p>
+                        <ul>
+                            <li>HTML, CSS y JavaScript</li>
+                            <li>Git y GitHub</li>
+                            <li>Desarrollo de páginas estáticas y pequeños proyectos dinámicos</li>
+                        </ul>
+                    </div>
+                    <div class="about-card">
+                        <h3>Contacto rápido</h3>
+                        <p>Email: <a href="mailto:ericcasanovas3@gmail.com">ericcasanovas3@gmail.com</a></p>
+                        <p>GitHub: <a href="https://github.com/tu-usuario" target="_blank" rel="noopener">github.com/tu-usuario</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Correo: tuemail@ejemplo.com</p>
-    </section>
+        <section id="proyectos" class="section section-alt">
+            <div class="container">
+                <h2>Proyectos</h2>
+                <p>Enlace directo a tus trabajos alojados en GitHub, Netlify, Vercel o donde los publiques.</p>
 
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Ejemplo de tarjeta de proyecto. Reemplaza URL y descripción -->
+                    <article class="project-card">
+                        <div class="project-thumb" style="background-color:#0b79d0"></div>
+                        <div class="project-body">
+                            <h3>Proyecto 1</h3>
+                            <p>Descripción corta del proyecto. Tecnologías: HTML, CSS, JS.</p>
+                            <a class="project-link" href="https://github.com/tu-usuario/proyecto-1" target="_blank" rel="noopener">Ver en GitHub</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb" style="background-color:#e94e77"></div>
+                        <div class="project-body">
+                            <h3>Proyecto 2</h3>
+                            <p>Descripción corta del proyecto. Demo online y repositorio.</p>
+                            <a class="project-link" href="https://tu-demo-ejemplo.com" target="_blank" rel="noopener">Ver demo</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb" style="background-color:#3ab54a"></div>
+                        <div class="project-body">
+                            <h3>Proyecto 3</h3>
+                            <p>Otro proyecto con herramientas utilizadas y objetivo del proyecto.</p>
+                            <a class="project-link" href="https://github.com/tu-usuario/proyecto-3" target="_blank" rel="noopener">Ver en GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>Rellena el formulario o usa el email para escribirme.</p>
+
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <label for="name">Nombre</label>
+                        <input id="name" name="name" type="text" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Enviar</button>
+                        <a class="btn-outline" href="mailto:ericcasanovas3@gmail.com">Enviar por email</a>
+                    </div>
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Eric Casanovas — Portafolio</p>
+            <nav class="footer-nav">
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
